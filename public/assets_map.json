@@ -1,0 +1,357 @@
+{
+  "fonts": [
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "filename": "inter_400_normal_5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "filename": "inter_400_normal_EOr0mi4hNtlgWNn9if640EZzXCo.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "filename": "inter_400_normal_Y9k9QrlZAqio88Klkmbd8VoMQc.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "filename": "inter_400_normal_OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "filename": "inter_400_normal_JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "filename": "inter_400_normal_GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "filename": "inter_400_normal_b6Y37FthZeALduNqHicBT6FutY.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "filename": "inter_700_normal_DpPBYI0sL4fYLgAkX8KXOPVt7c.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "filename": "inter_700_normal_4RAEQdEOrcnDkhHiiCbJOw92Lk.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "filename": "inter_700_normal_1K3W8DizY3v4emK8Mb08YHxTbs.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "filename": "inter_700_normal_tUSCtfYVM1I1IchuyCwz9gDdQ.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "filename": "inter_700_normal_VgYFWiwsAC5OYxAycRXXvhze58.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "filename": "inter_700_normal_syRNPWzAMIrcJ3wIlPIP43KjQs.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "filename": "inter_700_normal_GIryZETIX4IFypco5pYZONKhJIo.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "italic",
+      "filename": "inter_700_italic_H89BbHkbHDzlxZzxi8uPzTsp90.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "italic",
+      "filename": "inter_700_italic_u6gJwDuwB143kpNK1T1MDKDWkMc.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "italic",
+      "filename": "inter_700_italic_43sJ6MfOPh1LCJt46OvyDuSbA6o.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "italic",
+      "filename": "inter_700_italic_wccHG0r4gBDAIRhfHiOlq6oEkqw.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "italic",
+      "filename": "inter_700_italic_WZ367JPwf9bRW6LdTHN8rXgSjw.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "italic",
+      "filename": "inter_700_italic_ia3uin3hQWqDrVloC1zEtYHWw.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "italic",
+      "filename": "inter_700_italic_2A4Xx7CngadFGlVV4xrO06OBHY.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "italic",
+      "filename": "inter_400_italic_CfMzU8w2e7tHgF4T4rATMPuWosA.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "italic",
+      "filename": "inter_400_italic_867QObYax8ANsfX4TGEVU9YiCM.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "italic",
+      "filename": "inter_400_italic_Oyn2ZbENFdnW7mt2Lzjk1h9Zb9k.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "italic",
+      "filename": "inter_400_italic_cdAe8hgZ1cMyLu9g005pAW3xMo.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "italic",
+      "filename": "inter_400_italic_DOfvtmE1UplCq161m6Hj8CSQYg.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "italic",
+      "filename": "inter_400_italic_pKRFNWFoZl77qYCAIp84lN1h944.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "italic",
+      "filename": "inter_400_italic_tKtBcDnBMevsEEJKdNGhhkLzYo.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "normal",
+      "filename": "inter_900_normal_mkY5Sgyq51ik0AMrSBwhm9DJg.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "normal",
+      "filename": "inter_900_normal_X5hj6qzcHUYv7h1390c8Rhm6550.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "normal",
+      "filename": "inter_900_normal_gQhNpS3tN86g8RcVKYUUaKt2oMQ.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "normal",
+      "filename": "inter_900_normal_cugnVhSraaRyANCaUtI5FV17wk.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "normal",
+      "filename": "inter_900_normal_5HcVoGak8k5agFJSaKa4floXVu0.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "normal",
+      "filename": "inter_900_normal_rZ5DdENNqIdFTIyQQiP5isO7M.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "normal",
+      "filename": "inter_900_normal_P2Bw01CtL0b9wqygO0sSVogWbo.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "italic",
+      "filename": "inter_900_italic_05KsVHGDmqXSBXM4yRZ65P8i0s.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "italic",
+      "filename": "inter_900_italic_ky8ovPukK4dJ1Pxq74qGhOqCYI.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "italic",
+      "filename": "inter_900_italic_vvNSqIj42qeQ2bvCRBIWKHscrc.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "italic",
+      "filename": "inter_900_italic_3ZmXbBKToJifDV9gwcifVd1tEY.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "italic",
+      "filename": "inter_900_italic_FNfhX3dt4ChuLJq2PwdlxHO7PU.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "italic",
+      "filename": "inter_900_italic_gcnfba68tfm7qAyrWRCf9r34jg.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "900",
+      "style": "italic",
+      "filename": "inter_900_italic_efTfQcBJ53kM2pB1hezSZ3RDUFs.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "filename": "inter_600_normal_hyOgCu0Xnghbimh0pE8QTvtt2AU.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "filename": "inter_600_normal_NeGmSOXrPBfEFIy5YZeHq17LEDA.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "filename": "inter_600_normal_oYaAX5himiTPYuN8vLWnqBbfD2s.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "filename": "inter_600_normal_lEJLP4R0yuCaMCjSXYHtJw72M.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "filename": "inter_600_normal_cRJyLNuTJR5jbyKzGi33wU9cqIQ.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "filename": "inter_600_normal_yDtI2UI8XcEg1W2je9XPN3Noo.woff2"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "filename": "inter_600_normal_A0Wcc7NgXMjUuFdquHDrIZpzZw0.woff2"
+    }
+  ],
+  "images": {
+    "https://framerusercontent.com/images/6CIr9F5Zo7XUchFDBRgcMiomco.png": "/images/img_1_6CIr9F5Zo7XUchFDBRgc.png",
+    "https://framerusercontent.com/images/mXjxBWSb8GBdmvrqH4vscvKLA.png": "/images/img_2_mXjxBWSb8GBdmvrqH4vs.png",
+    "https://framerusercontent.com/images/mnXC0a9dZSgJCHDJ3vti0phV1I.png": "/images/img_3_mnXC0a9dZSgJCHDJ3vti.png",
+    "https://framerusercontent.com/images/5mkdq8RPTUb7Nm3JqBZaG4nM.png": "/images/img_4_5mkdq8RPTUb7Nm3JqBZa.png",
+    "https://framerusercontent.com/images/L2Ej5RgoEwGbYOGmsfg9LsJH8M4.png": "/images/img_5_L2Ej5RgoEwGbYOGmsfg9.png",
+    "https://framerusercontent.com/images/GOnQnjLyExyxPkWSiMUNEjFC6zQ.png": "/images/img_6_GOnQnjLyExyxPkWSiMUN.png",
+    "https://framerusercontent.com/images/jGa7frOW52CEKTNtuPzoL6XDKw.png": "/images/img_7_jGa7frOW52CEKTNtuPzo.png",
+    "https://framerusercontent.com/images/OgD5z0NxIVWnZQMCOammWl26I.png": "/images/img_8_OgD5z0NxIVWnZQMCOamm.png",
+    "https://framerusercontent.com/images/TBtpBGBEIbsfs2xahoYnboA0ZcI.png": "/images/img_9_TBtpBGBEIbsfs2xahoYn.png",
+    "https://framerusercontent.com/images/dfwtCzaitCbNqbsEfPR1UawEVvA.png": "/images/img_10_dfwtCzaitCbNqbsEfPR1.png",
+    "https://framerusercontent.com/images/Sc73icfGZn0zsj50BzcmL1PKyrk.png": "/images/img_11_Sc73icfGZn0zsj50Bzcm.png",
+    "https://framerusercontent.com/images/1mCVem409s43uUR0leqgiNrOKw.png": "/images/img_12_1mCVem409s43uUR0leqg.png",
+    "https://framerusercontent.com/images/b8FGG2EowwmT3xdILJJSEN7d7M.png": "/images/img_13_b8FGG2EowwmT3xdILJJS.png",
+    "https://framerusercontent.com/images/mObZ1bQdzZNgtgSR3r5CnwIecQI.png": "/images/img_14_mObZ1bQdzZNgtgSR3r5C.png",
+    "https://framerusercontent.com/images/EE7h3oNdVhh0HtirUXPKYPTbZmA.png": "/images/img_15_EE7h3oNdVhh0HtirUXPK.png",
+    "https://framerusercontent.com/images/sjr45FR1tMcW00TyWaQdsxaN1uY.png": "/images/img_16_sjr45FR1tMcW00TyWaQd.png",
+    "https://framerusercontent.com/images/7q4VRurBfwV5qzcSakeUSiD5ysE.png": "/images/img_17_7q4VRurBfwV5qzcSakeU.png",
+    "https://framerusercontent.com/images/CyhEjCMf0LpAoRO4jWYUMzUcwHw.jpg": "/images/img_18_CyhEjCMf0LpAoRO4jWYU.jpg",
+    "https://framerusercontent.com/images/BF35uNdpt7mKqK7TrdE59ZQ.jpg": "/images/img_19_BF35uNdpt7mKqK7TrdE5.jpg",
+    "https://framerusercontent.com/images/HzZYXX8ZH2TkcJwv09Nz72uBAHc.jpg": "/images/img_20_HzZYXX8ZH2TkcJwv09Nz.jpg",
+    "https://framerusercontent.com/images/uPOu7pTJ2jtbqc4TLPfyAmEnfYE.jpg": "/images/img_21_uPOu7pTJ2jtbqc4TLPfy.jpg",
+    "https://framerusercontent.com/images/zHvn8P7yt98RKIRAHR59CcyxEQ.jpg": "/images/img_22_zHvn8P7yt98RKIRAHR59.jpg",
+    "https://framerusercontent.com/images/Xm5o18kZEcRX8HTpKnM31s4q0.jpg": "/images/img_23_Xm5o18kZEcRX8HTpKnM3.jpg",
+    "https://framerusercontent.com/images/BNHRAQK9skITgo29QCXN2u7PHM.jpg": "/images/img_24_BNHRAQK9skITgo29QCXN.jpg",
+    "https://framerusercontent.com/images/TS2eANUNpzLqV594808GWUQPuo.jpg": "/images/img_25_TS2eANUNpzLqV594808G.jpg",
+    "https://framerusercontent.com/images/UydS9ZJZeWpUH5uNPUpG3ez8w.jpg": "/images/img_26_UydS9ZJZeWpUH5uNPUpG.jpg",
+    "https://framerusercontent.com/images/vE8NwsK5iKqyBNzJBPt5x3K0Dk.jpg": "/images/img_27_vE8NwsK5iKqyBNzJBPt5.jpg",
+    "https://framerusercontent.com/images/4Fur1tXxISbPds43ew0qobw.jpg": "/images/img_28_4Fur1tXxISbPds43ew0q.jpg",
+    "https://framerusercontent.com/images/4GovxnK3IxLhydt5ScI9DlYvask.png": "/images/img_29_4GovxnK3IxLhydt5ScI9.png",
+    "https://framerusercontent.com/images/PvdQ8l6PPnbPrYRbs5eipFlevas.png": "/images/img_30_PvdQ8l6PPnbPrYRbs5ei.png",
+    "https://framerusercontent.com/images/OQnrIsjDz2WWZUs2Ma4lI9hk.png": "/images/img_31_OQnrIsjDz2WWZUs2Ma4l.png",
+    "https://framerusercontent.com/images/CCboQ1IkaXCGeT3jvKKNpK10Zng.png": "/images/img_32_CCboQ1IkaXCGeT3jvKKN.png",
+    "https://framerusercontent.com/images/rgdakbNEJZLapifjIWueVIW2hHc.png": "/images/img_33_rgdakbNEJZLapifjIWue.png",
+    "https://framerusercontent.com/images/C9bL243VwN8YDo3QjAQ6GnZymI.png": "/images/img_34_C9bL243VwN8YDo3QjAQ6.png",
+    "https://framerusercontent.com/images/aq0uBp1NfDkamqeJahF3ZdXb8k8.png": "/images/img_35_aq0uBp1NfDkamqeJahF3.png",
+    "https://framerusercontent.com/images/RSfVJtzzfN3ZuTJJl1UxMy1DQ.png": "/images/img_36_RSfVJtzzfN3ZuTJJl1Ux.png",
+    "https://framerusercontent.com/images/pyb6XPo8n6DAdVvYffCaQIkZwjY.png": "/images/img_37_pyb6XPo8n6DAdVvYffCa.png",
+    "https://framerusercontent.com/images/N9gUQpiwJ5gkWomcfixHvhKudw.png": "/images/img_38_N9gUQpiwJ5gkWomcfixH.png",
+    "https://framerusercontent.com/images/DWWqAd4OarOR78RLCkSgBh9YcM.png": "/images/img_39_DWWqAd4OarOR78RLCkSg.png",
+    "https://framerusercontent.com/images/AAPiKmnQ9DFj6S2VYZDtQzmwMg4.png": "/images/img_40_AAPiKmnQ9DFj6S2VYZDt.png",
+    "https://framerusercontent.com/images/rhNutcIKzlXDZztLuDEK68U.png": "/images/img_41_rhNutcIKzlXDZztLuDEK.png",
+    "https://framerusercontent.com/images/BMwYW570aJMPYpRTt1g45nw6o7I.jpg": "/images/img_42_BMwYW570aJMPYpRTt1g4.jpg",
+    "https://framerusercontent.com/images/oX51K9osv27kwDmJwpi6pslkHk.png": "/images/img_43_oX51K9osv27kwDmJwpi6.png",
+    "https://framerusercontent.com/images/mDJyVpNXeLnGZyAAZiam7zOYrLg.jpg": "/images/img_44_mDJyVpNXeLnGZyAAZiam.jpg",
+    "https://framerusercontent.com/images/OcozqjhgBZSDv3fnuNPqWqMxtLQ.png": "/images/img_45_OcozqjhgBZSDv3fnuNPq.png",
+    "https://framerusercontent.com/images/DLH1Q39bhfl77IAUdwi6USn8Wg.png": "/images/img_46_DLH1Q39bhfl77IAUdwi6.png",
+    "https://framerusercontent.com/images/CdZC7xRRxTR8cTRcn2azaRJAjQ8.png": "/images/img_47_CdZC7xRRxTR8cTRcn2az.png",
+    "https://framerusercontent.com/images/6sZA4cv8tt7BGhsx3e952vDm0FY.png": "/images/img_48_6sZA4cv8tt7BGhsx3e95.png",
+    "https://framerusercontent.com/images/RpclwoWOwDngH7cjbiYwU7MGbwY.png": "/images/img_49_RpclwoWOwDngH7cjbiYw.png",
+    "https://framerusercontent.com/images/ZkRO0qDftAfuwSeo3bAZBXUH5q4.png": "/images/img_50_ZkRO0qDftAfuwSeo3bAZ.png",
+    "https://framerusercontent.com/images/qVyofsXU4RWd6oF1cdHf4LBr9g.png": "/images/img_51_qVyofsXU4RWd6oF1cdHf.png",
+    "https://framerusercontent.com/images/SLjf225AgHSQsgzAQ2EkJPcdo.png": "/images/img_52_SLjf225AgHSQsgzAQ2Ek.png",
+    "https://framerusercontent.com/images/weRU4qFHO8lBTLgJx4W5NX7ThK8.png": "/images/img_53_weRU4qFHO8lBTLgJx4W5.png",
+    "https://framerusercontent.com/images/mOHvyhus6UzJ9GvicM8bp7oJ0.png": "/images/img_54_mOHvyhus6UzJ9GvicM8b.png",
+    "https://framerusercontent.com/images/HO1QLYN0VfS7qkBI1UjHnSQts.png": "/images/img_55_HO1QLYN0VfS7qkBI1UjH.png",
+    "https://framerusercontent.com/images/jQeRhjKiX9QlrjFgbuBelXcsPc.png": "/images/img_56_jQeRhjKiX9QlrjFgbuBe.png",
+    "https://framerusercontent.com/images/fMd1fXl6KpxAKDPvTvU5SKjHsf8.png": "/images/img_57_fMd1fXl6KpxAKDPvTvU5.png"
+  }
+}
