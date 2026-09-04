@@ -1,5 +1,12 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Clock, ShieldCheck, Sparkles, HeartHandshake } from 'lucide-react';
+import {
+  revealVariants,
+  cardHoverVariants,
+  framerViewport,
+  framerTransitions,
+} from '@/lib/motion';
 
 export const WhyChooseSection: React.FC = () => {
   const points = [
@@ -32,8 +39,13 @@ export const WhyChooseSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Content Left */}
-          <div>
-            <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20">
+          <motion.div
+            variants={revealVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={framerViewport}
+          >
+            <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20 font-satoshi">
               WHY CHOOSE HYPERFIT
             </span>
             <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white mt-4 mb-6">
@@ -44,11 +56,27 @@ export const WhyChooseSection: React.FC = () => {
               Hyperfit isn’t just another gym template. It’s designed for real people who want progress without corporate intimidation.
             </p>
 
+            {/* Point Cards (Exact Framer zc spring entrance) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {points.map((pt, idx) => {
                 const Icon = pt.icon;
                 return (
-                  <div key={idx} className="p-5 rounded-2xl bg-zinc-900/60 border border-white/10 hover:border-[#ccff00]/40 transition-colors">
+                  <motion.div
+                    key={idx}
+                    variants={cardHoverVariants}
+                    initial="initial"
+                    whileHover="hover"
+                    whileInView={{
+                      opacity: [0, 1],
+                      scale: [0.95, 1],
+                      transition: {
+                        ...framerTransitions.pointCardsReveal,
+                        delay: 0.15 * idx,
+                      },
+                    }}
+                    viewport={framerViewport}
+                    className="p-5 rounded-2xl bg-zinc-900/60 border border-white/10 hover:border-[#ccff00]/40 transition-colors cursor-pointer"
+                  >
                     <div className="w-10 h-10 rounded-xl bg-[#ccff00]/10 flex items-center justify-center mb-4">
                       <Icon className="w-5 h-5 text-[#ccff00]" />
                     </div>
@@ -58,14 +86,20 @@ export const WhyChooseSection: React.FC = () => {
                     <p className="text-zinc-400 text-xs leading-relaxed">
                       {pt.description}
                     </p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Image Right */}
-          <div className="relative">
+          {/* Image Right (Exact Framer zc spring reveal) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={framerViewport}
+            transition={framerTransitions.pointCardsReveal}
+            className="relative"
+          >
             <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-900">
               <img
                 src="/images/img_32_CCboQ1IkaXCGeT3jvKKN.png"
@@ -73,7 +107,7 @@ export const WhyChooseSection: React.FC = () => {
                 className="w-full h-[520px] object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

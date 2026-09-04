@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Phone, Mail, Send, CheckCircle2 } from 'lucide-react';
+import {
+  revealVariants,
+  slideInLeftVariants,
+  slideInRightVariants,
+  buttonHoverVariants,
+  framerViewport,
+  framerTransitions,
+} from '@/lib/motion';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -22,8 +31,14 @@ export const ContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20">
+        <motion.div
+          variants={revealVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={framerViewport}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20 font-satoshi">
             CONTACT US
           </span>
           <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white mt-4 mb-4">
@@ -32,12 +47,18 @@ export const ContactSection: React.FC = () => {
           <p className="text-zinc-400 text-base sm:text-lg">
             Have a question? Want to visit? We’re here to help you take the first step.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           
           {/* Info Left */}
-          <div className="space-y-8">
+          <motion.div
+            variants={slideInLeftVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={framerViewport}
+            className="space-y-8"
+          >
             <div className="p-8 rounded-3xl bg-zinc-900/60 border border-white/10 space-y-6">
               <h3 className="text-xl font-bold text-white uppercase tracking-tight">
                 OUR LOCATIONS
@@ -48,7 +69,7 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <div className="text-sm font-bold text-white uppercase">HYPERFIT WEST WING STUDIO</div>
                   <p className="text-zinc-400 text-xs mt-1">2nd Floor, West Wing Athletics Hub, San Francisco, CA</p>
-                  <p className="text-xs text-[#ccff00] font-medium mt-1">Open 24/7 for Members</p>
+                  <p className="text-xs text-[#ccff00] font-medium mt-1 font-satoshi">Open 24/7 for Members</p>
                 </div>
               </div>
 
@@ -57,7 +78,7 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <div className="text-sm font-bold text-white uppercase">HYPERFIT DOWNTOWN ARENA</div>
                   <p className="text-zinc-400 text-xs mt-1">104 Central Plaza, Tech District, San Francisco, CA</p>
-                  <p className="text-xs text-[#ccff00] font-medium mt-1">Open 24/7 for Members</p>
+                  <p className="text-xs text-[#ccff00] font-medium mt-1 font-satoshi">Open 24/7 for Members</p>
                 </div>
               </div>
             </div>
@@ -73,20 +94,31 @@ export const ContactSection: React.FC = () => {
                 <span className="text-sm font-bold text-white">hello@hyperfit-gym.com</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Form Right */}
-          <div className="p-8 rounded-3xl bg-zinc-900 border border-white/10 shadow-2xl">
+          <motion.div
+            variants={slideInRightVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={framerViewport}
+            className="p-8 rounded-3xl bg-zinc-900 border border-white/10 shadow-2xl"
+          >
             <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-6">
               SEND US A MESSAGE
             </h3>
 
             {submitted ? (
-              <div className="p-6 rounded-2xl bg-[#ccff00]/10 border border-[#ccff00]/40 text-center space-y-3">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={framerTransitions.pointCardsReveal}
+                className="p-6 rounded-2xl bg-[#ccff00]/10 border border-[#ccff00]/40 text-center space-y-3"
+              >
                 <CheckCircle2 className="w-12 h-12 text-[#ccff00] mx-auto" />
                 <h4 className="text-lg font-bold text-white uppercase">MESSAGE RECEIVED!</h4>
                 <p className="text-xs text-zinc-300">Thank you for reaching out. One of our team members will contact you shortly.</p>
-              </div>
+              </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -150,16 +182,25 @@ export const ContactSection: React.FC = () => {
                   />
                 </div>
 
-                <button
+                <motion.button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#ccff00] hover:bg-[#b8e600] text-black font-extrabold text-xs uppercase tracking-wider py-4 rounded-xl transition-all duration-200"
+                  variants={buttonHoverVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#ccff00] text-black font-extrabold text-xs uppercase tracking-wider py-4 rounded-xl transition-colors cursor-pointer shadow-[0_0_20px_rgba(204,255,0,0.15)]"
                 >
                   <span>SEND MESSAGE</span>
-                  <Send className="w-4 h-4" />
-                </button>
+                  <motion.div
+                    whileHover={{ rotate: 45 }}
+                    transition={framerTransitions.quickInteractive}
+                  >
+                    <Send className="w-4 h-4" />
+                  </motion.div>
+                </motion.button>
               </form>
             )}
-          </div>
+          </motion.div>
 
         </div>
 

@@ -1,5 +1,12 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
+import {
+  revealVariants,
+  cardHoverVariants,
+  framerViewport,
+  framerTransitions,
+} from '@/lib/motion';
 
 export const TestimonialsSection: React.FC = () => {
   const reviews = [
@@ -31,8 +38,14 @@ export const TestimonialsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20">
+        <motion.div
+          variants={revealVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={framerViewport}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20 font-satoshi">
             MEMBER REVIEWS
           </span>
           <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white mt-4 mb-4">
@@ -42,14 +55,23 @@ export const TestimonialsSection: React.FC = () => {
           <p className="text-zinc-400 text-base sm:text-lg">
             Hear from our members who built lasting strength and routine with Hyperfit.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Reviews Grid */}
+        {/* Reviews Grid (Exact Framer Uo Testimonials Slider springs) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((rev, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="p-8 rounded-3xl bg-zinc-900/60 border border-white/10 hover:border-[#ccff00]/40 transition-all duration-300 flex flex-col justify-between"
+              variants={cardHoverVariants}
+              initial="initial"
+              whileHover="hover"
+              whileInView={{
+                opacity: [0, 1],
+                y: [40, 0],
+                transition: framerTransitions.serviceCardStagger(idx),
+              }}
+              viewport={framerViewport}
+              className="p-8 rounded-3xl bg-zinc-900/60 border border-white/10 hover:border-[#ccff00]/40 transition-colors duration-300 flex flex-col justify-between cursor-pointer"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
@@ -73,11 +95,11 @@ export const TestimonialsSection: React.FC = () => {
                   className="w-12 h-12 rounded-full object-cover border border-[#ccff00]/30"
                 />
                 <div>
-                  <div className="text-sm font-bold text-white uppercase">{rev.name}</div>
+                  <div className="text-sm font-bold text-white uppercase font-satoshi">{rev.name}</div>
                   <div className="text-xs text-zinc-400">{rev.date}</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

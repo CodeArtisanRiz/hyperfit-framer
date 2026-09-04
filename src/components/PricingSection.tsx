@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Check, ArrowUpRight, Sparkles } from 'lucide-react';
+import {
+  revealVariants,
+  buttonHoverVariants,
+  cardHoverVariants,
+  framerViewport,
+  framerTransitions,
+} from '@/lib/motion';
 
 export const PricingSection: React.FC = () => {
   const [annual, setAnnual] = useState(false);
@@ -59,8 +67,14 @@ export const PricingSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20">
+        <motion.div
+          variants={revealVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={framerViewport}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
+          <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20 font-satoshi">
             MEMBERSHIP PLANS
           </span>
           <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white mt-4 mb-4">
@@ -71,43 +85,69 @@ export const PricingSection: React.FC = () => {
             Choose a plan that fits your pace — whether you’re just starting out or going all in.
           </p>
 
-          {/* Billing Toggle */}
-          <div className="mt-8 inline-flex items-center gap-4 bg-zinc-900 border border-white/10 p-1.5 rounded-full">
+          {/* Exact Framer Ei Spring Toggle (stiffness: 500, damping: 60, mass: 1) */}
+          <div className="mt-8 inline-flex items-center bg-zinc-900 border border-white/10 p-1.5 rounded-full relative">
             <button
               onClick={() => setAnnual(false)}
-              className={`px-6 py-2 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all ${
-                !annual ? 'bg-[#ccff00] text-black shadow-md' : 'text-zinc-400 hover:text-white'
+              className={`relative px-6 py-2 rounded-full text-xs font-extrabold uppercase tracking-wider z-10 transition-colors ${
+                !annual ? 'text-black' : 'text-zinc-400 hover:text-white'
               }`}
             >
               MONTHLY BILLING
+              {!annual && (
+                <motion.div
+                  layoutId="pricing-active-pill"
+                  transition={framerTransitions.pricingSwitcher}
+                  className="absolute inset-0 bg-[#ccff00] rounded-full -z-10 shadow-md"
+                />
+              )}
             </button>
+
             <button
               onClick={() => setAnnual(true)}
-              className={`px-6 py-2 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all flex items-center gap-2 ${
-                annual ? 'bg-[#ccff00] text-black shadow-md' : 'text-zinc-400 hover:text-white'
+              className={`relative px-6 py-2 rounded-full text-xs font-extrabold uppercase tracking-wider z-10 transition-colors flex items-center gap-2 ${
+                annual ? 'text-black' : 'text-zinc-400 hover:text-white'
               }`}
             >
               <span>ANNUAL BILLING</span>
-              <span className="bg-black/20 text-xs px-2 py-0.5 rounded-full">SAVE 20%</span>
+              <span className={`text-[10px] px-2 py-0.5 rounded-full ${annual ? 'bg-black/20 text-black' : 'bg-white/10 text-zinc-300'}`}>
+                SAVE 20%
+              </span>
+              {annual && (
+                <motion.div
+                  layoutId="pricing-active-pill"
+                  transition={framerTransitions.pricingSwitcher}
+                  className="absolute inset-0 bg-[#ccff00] rounded-full -z-10 shadow-md"
+                />
+              )}
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {plans.map((plan, idx) => {
             const price = annual ? plan.priceAnnual : plan.priceMonthly;
             return (
-              <div
+              <motion.div
                 key={idx}
-                className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 ${
+                variants={cardHoverVariants}
+                initial="initial"
+                whileHover="hover"
+                whileInView={{
+                  opacity: [0, 1],
+                  y: [40, 0],
+                  transition: framerTransitions.serviceCardStagger(idx),
+                }}
+                viewport={framerViewport}
+                className={`relative rounded-3xl p-8 flex flex-col justify-between transition-colors duration-300 ${
                   plan.popular
-                    ? 'bg-gradient-to-b from-zinc-900 via-[#121604] to-zinc-900 border-2 border-[#ccff00] shadow-[0_0_40px_rgba(204,255,0,0.15)] transform lg:-translate-y-4'
+                    ? 'bg-gradient-to-b from-zinc-900 via-[#121604] to-zinc-900 border-2 border-[#ccff00] shadow-[0_0_40px_rgba(204,255,0,0.15)] lg:-translate-y-4'
                     : 'bg-zinc-900/60 border border-white/10 hover:border-white/20'
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#ccff00] text-black text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#ccff00] text-black text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 font-satoshi">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>MOST POPULAR CHOICE</span>
                   </div>
@@ -126,7 +166,18 @@ export const PricingSection: React.FC = () => {
                   </p>
 
                   <div className="flex items-baseline gap-1 mb-8">
-                    <span className="text-5xl font-black text-white font-satoshi">${price}</span>
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={price}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={framerTransitions.quickInteractive}
+                        className="text-5xl font-black text-white font-satoshi"
+                      >
+                        ${price}
+                      </motion.span>
+                    </AnimatePresence>
                     <span className="text-zinc-400 text-sm font-semibold">/month</span>
                   </div>
 
@@ -142,18 +193,22 @@ export const PricingSection: React.FC = () => {
                   </ul>
                 </div>
 
-                <a
+                <motion.a
                   href="#contact"
-                  className={`w-full inline-flex items-center justify-center gap-2 font-black text-xs uppercase tracking-wider py-4 rounded-full transition-all duration-200 ${
+                  variants={buttonHoverVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  whileTap="tap"
+                  className={`w-full inline-flex items-center justify-center gap-2 font-black text-xs uppercase tracking-wider py-4 rounded-full transition-colors ${
                     plan.popular
-                      ? 'bg-[#ccff00] hover:bg-[#b8e600] text-black shadow-lg hover:scale-[1.02]'
+                      ? 'bg-[#ccff00] text-black shadow-lg'
                       : 'bg-zinc-800 hover:bg-zinc-700 text-white'
                   }`}
                 >
                   <span>SELECT THIS PLAN</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </a>
-              </div>
+                </motion.a>
+              </motion.div>
             );
           })}
         </div>

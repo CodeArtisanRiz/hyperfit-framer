@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export const LogoMarquee: React.FC = () => {
   const logos = [
@@ -16,17 +17,25 @@ export const LogoMarquee: React.FC = () => {
   return (
     <section className="py-12 bg-[#0c0c10] border-y border-white/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
-        <p className="text-xs font-bold tracking-widest text-zinc-400 uppercase">
+        <p className="text-xs font-bold tracking-widest text-zinc-400 uppercase font-satoshi">
           TRUSTED BY ATHLETES & LEADING FITNESS BRANDS
         </p>
       </div>
 
-      <div className="relative w-full overflow-hidden mask-linear-gradient">
+      <div className="relative w-full overflow-hidden">
         {/* Left/Right Fading Overlays */}
         <div className="absolute top-0 bottom-0 left-0 w-24 z-10 bg-gradient-to-r from-[#0c0c10] to-transparent pointer-events-none" />
         <div className="absolute top-0 bottom-0 right-0 w-24 z-10 bg-gradient-to-l from-[#0c0c10] to-transparent pointer-events-none" />
 
-        <div className="animate-marquee items-center gap-16">
+        <motion.div
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            ease: 'linear',
+            duration: 25,
+            repeat: Infinity,
+          }}
+          className="flex items-center gap-16 w-max"
+        >
           {marqueeLogos.map((logo, idx) => (
             <div key={idx} className="flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-300">
               <img
@@ -36,7 +45,7 @@ export const LogoMarquee: React.FC = () => {
               />
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

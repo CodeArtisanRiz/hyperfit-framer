@@ -1,5 +1,12 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { CalendarCheck, Compass, Trophy } from 'lucide-react';
+import {
+  revealVariants,
+  cardHoverVariants,
+  framerViewport,
+  framerTransitions,
+} from '@/lib/motion';
 
 export const HowItWorksSection: React.FC = () => {
   const steps = [
@@ -27,8 +34,14 @@ export const HowItWorksSection: React.FC = () => {
     <section className="py-24 bg-[#08080a] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20">
+        <motion.div
+          variants={revealVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={framerViewport}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20 font-satoshi">
             HOW IT WORKS
           </span>
           <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white mt-4 mb-4">
@@ -37,15 +50,24 @@ export const HowItWorksSection: React.FC = () => {
           <p className="text-zinc-400 text-base sm:text-lg">
             At Hyperfit, we make your fitness journey feel natural, structured, and easy to stick with.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
-                className="relative p-8 rounded-3xl bg-zinc-900/50 border border-white/10 hover:border-[#ccff00]/40 transition-all duration-300 group"
+                variants={cardHoverVariants}
+                initial="initial"
+                whileHover="hover"
+                whileInView={{
+                  opacity: [0, 1],
+                  y: [40, 0],
+                  transition: framerTransitions.serviceCardStagger(idx),
+                }}
+                viewport={framerViewport}
+                className="relative p-8 rounded-3xl bg-zinc-900/50 border border-white/10 hover:border-[#ccff00]/40 transition-colors duration-300 group cursor-pointer"
               >
                 <div className="flex items-center justify-between mb-8">
                   <div className="w-14 h-14 rounded-2xl bg-[#ccff00]/10 border border-[#ccff00]/30 flex items-center justify-center group-hover:bg-[#ccff00] transition-colors duration-300">
@@ -62,7 +84,7 @@ export const HowItWorksSection: React.FC = () => {
                 <p className="text-zinc-400 text-sm leading-relaxed">
                   {step.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

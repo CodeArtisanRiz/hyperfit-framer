@@ -1,5 +1,12 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import {
+  revealVariants,
+  buttonHoverVariants,
+  framerViewport,
+  framerTransitions,
+} from '@/lib/motion';
 
 export const AppDownloadSection: React.FC = () => {
   const points = [
@@ -12,11 +19,16 @@ export const AppDownloadSection: React.FC = () => {
     <section className="py-24 bg-[#0c0c10] border-t border-white/10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-br from-[#121604] via-zinc-900 to-zinc-900 border border-[#ccff00]/30 shadow-2xl relative overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
+        <motion.div
+          variants={revealVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={framerViewport}
+          className="p-8 sm:p-14 rounded-3xl bg-gradient-to-br from-[#121604] via-zinc-900 to-zinc-900 border border-[#ccff00]/30 shadow-2xl relative overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        >
           {/* Content Left */}
           <div>
-            <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20">
+            <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20 font-satoshi">
               ALWAYS CONNECTED
             </span>
             <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tight text-white mt-4 mb-4">
@@ -40,25 +52,45 @@ export const AppDownloadSection: React.FC = () => {
 
             {/* Store Buttons */}
             <div className="flex flex-wrap gap-4 items-center">
-              <a href="#" className="inline-block transition-transform hover:scale-105">
+              <motion.a
+                href="#"
+                variants={buttonHoverVariants}
+                initial="initial"
+                whileHover="hover"
+                whileTap="tap"
+                className="inline-block"
+              >
                 <img src="/images/img_52_SLjf225AgHSQsgzAQ2Ek.png" alt="Get it on Google Play" className="h-12 w-auto" />
-              </a>
-              <a href="#" className="inline-block transition-transform hover:scale-105">
+              </motion.a>
+              <motion.a
+                href="#"
+                variants={buttonHoverVariants}
+                initial="initial"
+                whileHover="hover"
+                whileTap="tap"
+                className="inline-block"
+              >
                 <img src="/images/img_53_weRU4qFHO8lBTLgJx4W5.png" alt="Download on the App Store" className="h-12 w-auto" />
-              </a>
+              </motion.a>
             </div>
           </div>
 
-          {/* App Image Right */}
-          <div className="relative flex justify-center">
+          {/* App Image Right (Exact Framer zc entrance) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={framerViewport}
+            transition={framerTransitions.pointCardsReveal}
+            className="relative flex justify-center"
+          >
             <img
               src="/images/img_54_mOHvyhus6UzJ9GvicM8b.png"
               alt="Hyperfit Mobile App Interface"
-              className="max-h-[420px] w-auto object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] hover:scale-105 transition-transform duration-500"
+              className="max-h-[420px] w-auto object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
             />
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
 
       </div>
     </section>

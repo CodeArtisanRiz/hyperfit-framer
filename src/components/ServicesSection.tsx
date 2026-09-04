@@ -1,5 +1,12 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowUpRight, Dumbbell, Users, Utensils, Zap } from 'lucide-react';
+import {
+  revealVariants,
+  cardHoverVariants,
+  framerViewport,
+  framerTransitions,
+} from '@/lib/motion';
 
 export const ServicesSection: React.FC = () => {
   const services = [
@@ -38,9 +45,15 @@ export const ServicesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <motion.div
+          variants={revealVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={framerViewport}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+        >
           <div>
-            <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20">
+            <span className="text-[#ccff00] text-xs font-extrabold uppercase tracking-widest bg-[#ccff00]/10 px-4 py-1.5 rounded-full border border-[#ccff00]/20 font-satoshi">
               OUR SERVICES
             </span>
             <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white mt-4">
@@ -51,23 +64,32 @@ export const ServicesSection: React.FC = () => {
           <p className="text-zinc-400 text-base max-w-md">
             From personal training to nutrition and recovery — we cover what your body needs to build lasting strength and vitality.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Services Grid */}
+        {/* Services Grid (Exact Framer Ar, Pr, Ir column staggers) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, idx) => {
             const Icon = service.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
-                className={`group relative p-8 rounded-3xl bg-gradient-to-br ${service.bgGradient} border border-white/10 hover:border-[#ccff00]/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(204,255,0,0.1)] flex flex-col justify-between`}
+                variants={cardHoverVariants}
+                initial="initial"
+                whileHover="hover"
+                whileInView={{
+                  opacity: [0, 1],
+                  y: [40, 0],
+                  transition: framerTransitions.serviceCardStagger(idx),
+                }}
+                viewport={framerViewport}
+                className={`group relative p-8 rounded-3xl bg-gradient-to-br ${service.bgGradient} border border-white/10 hover:border-[#ccff00]/60 transition-colors duration-300 hover:shadow-[0_0_30px_rgba(204,255,0,0.1)] flex flex-col justify-between cursor-pointer`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl bg-[#ccff00]/10 border border-[#ccff00]/30 flex items-center justify-center group-hover:bg-[#ccff00] transition-colors duration-300">
                       <Icon className="w-7 h-7 text-[#ccff00] group-hover:text-black transition-colors duration-300" />
                     </div>
-                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-400 bg-zinc-800/80 px-3 py-1.5 rounded-full border border-white/5">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-400 bg-zinc-800/80 px-3 py-1.5 rounded-full border border-white/5 font-satoshi">
                       {service.tag}
                     </span>
                   </div>
@@ -82,12 +104,18 @@ export const ServicesSection: React.FC = () => {
                 </div>
 
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-xs font-bold text-zinc-300 uppercase tracking-wider">LEARN MORE</span>
-                  <div className="w-8 h-8 rounded-full bg-zinc-800 group-hover:bg-[#ccff00] flex items-center justify-center transition-colors">
+                  <span className="text-xs font-bold text-zinc-300 uppercase tracking-wider font-satoshi">
+                    LEARN MORE
+                  </span>
+                  <motion.div
+                    whileHover={{ rotate: 45 }}
+                    transition={framerTransitions.quickInteractive}
+                    className="w-8 h-8 rounded-full bg-zinc-800 group-hover:bg-[#ccff00] flex items-center justify-center transition-colors"
+                  >
                     <ArrowUpRight className="w-4 h-4 text-zinc-300 group-hover:text-black transition-colors" />
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
